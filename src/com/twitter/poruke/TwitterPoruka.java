@@ -25,6 +25,12 @@ public class TwitterPoruka {
 	private String poruka;
 	
 	/**
+	 * Vreme slanja.
+	 */
+	
+	private GregorianCalendar vreme = new GregorianCalendar();
+	
+	/**
 	 * Metoda vraca ime korisnika, tj. vrednost atributa korisnik.
 	 * @return ime korisnika kao String.
 	 */
@@ -69,6 +75,15 @@ public class TwitterPoruka {
 		this.poruka = poruka;
 	}
 	
+	/**
+	 * Vraca vreme slanja poruke.
+	 * @return vreme kao GregorianCalendar
+	 */
+	
+	public GregorianCalendar getVreme() {
+		return vreme;
+	}
+
 	/**
 	 * Redefinisana metoda toString klase Object.
 	 * Vraca String u kome se nalaze informacije o korisniku, sadrzaju poruke i
