@@ -3,14 +3,38 @@ package com.twitter;
 import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
 
+/**
+ * Klasa predstavlja drustvenu mrezu Twitter. Sadrzi metode za unosenje poruke i
+ * pretrazivanje poruka po tagu.
+ * 
+ * @author ivanrakic94
+ * @version 1.0
+ */
+
 public class Twitter {
+	
+	/**
+	 * Lista objekata tipa TwitterPoruka.
+	 */
 	
 	private LinkedList<TwitterPoruka> poruke =
 			new LinkedList<TwitterPoruka>();
 	
+	/**
+	 * Metoda vraca sve poruke u listi.
+	 * @return sve Twitter poruke kao lista
+	 */
+	
 	public LinkedList<TwitterPoruka> vratiSvePoruke(){
 		return poruke;
 	}
+	
+	/**
+	 * Metoda kreira novu TwitterPoruku na osnovu parametara
+	 *  i unosi je na poslednje mesto u listi.
+	 * @param korisnik ime novog korisnika
+	 * @param poruka poruka koju korisnik unosi
+	 */
 	
 	public void unesi(String korisnik, String poruka) {
 		//Pravi se nova poruka i puni podacima.
@@ -20,6 +44,14 @@ public class Twitter {
 		//Poruka se unosi u listu na kraj
 		poruke.addLast(tp);
 	}
+	
+	/**
+	 * Metoda vraca poruke u kojima se pojavljuje uneti tag, a maksimalni broj 
+	 * vracenih poruka se unosi kao parametar.
+	 * @param maxBroj maksimalan broj poruka koji moze biti vracen
+	 * @param tag tag po kome se pretrazuju poruke u listi
+	 * @return poruke u kojima je pronadjen uneti tag u vidu niza objekata`
+	 */
 	
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag==null || tag.isEmpty())
