@@ -51,6 +51,7 @@ public class Twitter {
 	 * @param maxBroj maksimalan broj poruka koji moze biti vracen
 	 * @param tag tag po kome se pretrazuju poruke u listi
 	 * @return poruke u kojima je pronadjen uneti tag u vidu niza objekata`
+	 * @throws java.lang.RuntimeException ako je uneti tag null ili prazan String
 	 */
 	
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
